@@ -11,7 +11,7 @@
 
     internal class TaskProgram
     { 
-        Tasks TasksInstance = new Tasks("", "");
+        Tasks TasksInstance = new Tasks("", "", "");
         bool RunProgram = true;
 
         public void Run()
@@ -26,13 +26,13 @@
                 switch (UserChoice)
                 {
                     case '1':
-                        TasksInstance.AddTask("","");
+                        TasksInstance.AddTask("","","");
                         break;
                     case '2':
                         TasksInstance.ShowTasks("", "");
                         break;
                     case '3':
-                        TasksInstance.DeleteTask("", "");
+                        TasksInstance.DeleteTask("", "", "");
                         break;
                     case '4':
                         Console.WriteLine("Ha en fin dag!");
