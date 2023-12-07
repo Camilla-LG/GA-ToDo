@@ -29,6 +29,7 @@ namespace GA_ToDo
             deadline = Console.ReadLine();
             ListOfTasks.Add(new Tasks(task, deadline, deleteObject));
             Console.WriteLine("Oppgave og frist er lagt til listen.");
+            Console.WriteLine();
         }
 
         public void ShowTasks(string task, string deadline)
@@ -49,20 +50,20 @@ namespace GA_ToDo
             {
                 if (DeleteObject.ToLower() == ListOfTasks[i].Task.ToLower())
                 {
-                    Console.WriteLine($"Vil du fjerne oppgaven {ListOfTasks[i].Task} med frist {ListOfTasks[i].Deadline}? J/N");
+                    Console.WriteLine(
+                        $"Vil du fjerne oppgaven {ListOfTasks[i].Task} med frist {ListOfTasks[i].Deadline}? J/N");
                     string UserInput = Console.ReadLine();
 
                     if (UserInput.ToLower() == "j")
                     {
                         ListOfTasks.RemoveAt(i);
-                        Console.WriteLine($"{ListOfTasks[i].Task} med frist {ListOfTasks[i].Deadline} er fjernet fra listen.");
+                        Console.WriteLine(
+                            $"{ListOfTasks[i].Task} med frist {ListOfTasks[i].Deadline} er fjernet fra listen.");
                         Console.WriteLine();
                     }
-                    else
-                    {
-                        Console.WriteLine("Finner ikke oppgaven i listen.");
-                    }
                 }
+                Console.WriteLine("Finner ikke oppgaven i listen.");
+                Console.WriteLine();
             }
         }
     }

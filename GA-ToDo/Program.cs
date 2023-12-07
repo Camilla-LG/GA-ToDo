@@ -23,24 +23,29 @@
                 var UserChoice = Console.ReadKey().KeyChar;
                 Console.WriteLine();
 
-                switch (UserChoice)
-                {
-                    case '1':
-                        TasksInstance.AddTask("","","");
-                        break;
-                    case '2':
-                        TasksInstance.ShowTasks("", "");
-                        break;
-                    case '3':
-                        TasksInstance.DeleteTask("", "", "");
-                        break;
-                    case '4':
-                        Console.WriteLine("Ha en fin dag!");
-                        RunProgram = false;
-                        break;
-                    default:
-                        break;
-                }
+                RunChoices(UserChoice);
+            }
+        }
+
+        public void RunChoices(char UserChoice)
+        {
+            switch (UserChoice)
+            {
+                case '1':
+                    TasksInstance.AddTask("", "", "");
+                    break;
+                case '2':
+                    TasksInstance.ShowTasks("", "");
+                    break;
+                case '3':
+                    TasksInstance.DeleteTask("", "", "");
+                    break;
+                case '4':
+                    Console.WriteLine("Ha en fin dag!");
+                    RunProgram = false;
+                    break;
+                default:
+                    break;
             }
         }
 
@@ -53,6 +58,7 @@
             Console.WriteLine("2. Vis liste med oppgaver.");
             Console.WriteLine("3. Slett oppgave fra listen.");
             Console.WriteLine("4. Exit.");
+            Console.WriteLine();
         }
     }
 }
